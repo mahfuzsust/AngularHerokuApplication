@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+	<span>Application Title</span>
+
+	<!-- This fills the remaining space of the current row -->
+	<span class="example-fill-remaining-space"></span>
+
+	<span routerLink="/" routerLinkActive="active">Home </span>
+	<span routerLink="profile" routerLinkActive="active" *ngIf="authService.logIn">Profile </span>
+	<span routerLink="login" routerLinkActive="active" *ngIf="!authService.logIn">Login </span>
+	<span (click)="logout()" href="#" *ngIf="authService.logIn">Logout</span>
+
+</mat-toolbar>
