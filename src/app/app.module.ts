@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { AuthGuard } from './auth/auth.guard';
 
 @NgModule({
 	declarations: [
@@ -28,7 +29,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 		BrowserAnimationsModule,
 		MatToolbarModule
 	],
-	providers: [],
+	providers: [AuthGuard],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

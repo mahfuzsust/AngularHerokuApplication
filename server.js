@@ -11,13 +11,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const JWT_Secret = 'your_secret_key';
-var testUser = { email: 'test@gmai.com', password: '1234' };
+var testUser = { email: 'test@gmail.com', password: '1234' };
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/' + package_json.name));
 
 app.post('/api/authenticate', (req, res) => {
-
     if (req.body) {
         var user = req.body;
         console.log(user)
@@ -42,7 +41,6 @@ app.post('/api/authenticate', (req, res) => {
 });
 
 app.get('/*', function (req, res) {
-
     res.sendFile(path.join(__dirname + '/dist/' + package_json.name + '/index.html'));
 });
 
